@@ -1,0 +1,258 @@
+--A very cool script made by masterdoggho, this took 2 hours, enjoy
+-- Instances:
+
+local ZombieSimulator = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Scripts = Instance.new("Frame")
+local AutoEat = Instance.new("TextButton")
+local AutoSell = Instance.new("TextButton")
+local BuyAllBrains = Instance.new("TextButton")
+local BuyBasicEgg = Instance.new("TextButton")
+local BuyCrackedEgg = Instance.new("TextButton")
+local BuyNatureEgg = Instance.new("TextButton")
+local ClaimDailyChest = Instance.new("TextButton")
+local ClaimGroupChest = Instance.new("TextButton")
+local MainTitle = Instance.new("TextLabel")
+local MainInfo = Instance.new("TextLabel")
+local Exit = Instance.new("TextButton")
+
+--Properties:
+
+ZombieSimulator.Name = "ZombieSimulator"
+ZombieSimulator.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = ZombieSimulator
+Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Main.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Main.Position = UDim2.new(0.22924529, 0, 0.119180635, 0)
+Main.Size = UDim2.new(0, 620, 0, 353)
+Main.Draggable = true
+Main.Active = true
+Main.Selectable = true
+
+Scripts.Name = "Scripts"
+Scripts.Parent = Main
+Scripts.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+Scripts.BorderColor3 = Color3.fromRGB(60, 60, 60)
+Scripts.Position = UDim2.new(0.0290322583, 0, 0.156644911, 0)
+Scripts.Size = UDim2.new(0, 586, 0, 284)
+
+AutoEat.Name = "AutoEat"
+AutoEat.Parent = Scripts
+AutoEat.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+AutoEat.BorderColor3 = Color3.fromRGB(85, 255, 0)
+AutoEat.BorderSizePixel = 0
+AutoEat.Position = UDim2.new(0.0252768062, 0, 0.0479664207, 0)
+AutoEat.Size = UDim2.new(0, 156, 0, 49)
+AutoEat.ZIndex = 2
+AutoEat.Font = Enum.Font.Creepster
+AutoEat.Text = "AUTO EAT"
+AutoEat.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoEat.TextScaled = true
+AutoEat.TextSize = 14.000
+AutoEat.TextWrapped = true
+AutoEat.MouseButton1Down:connect(function()
+while true do
+	wait("0")
+
+game:GetService("ReplicatedStorage").Events.Eat:FireServer()
+end
+end)
+
+AutoSell.Name = "AutoSell"
+AutoSell.Parent = Scripts
+AutoSell.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+AutoSell.BorderColor3 = Color3.fromRGB(85, 255, 0)
+AutoSell.BorderSizePixel = 0
+AutoSell.Position = UDim2.new(0.354628354, 0, 0.0479664207, 0)
+AutoSell.Size = UDim2.new(0, 156, 0, 49)
+AutoSell.ZIndex = 2
+AutoSell.Font = Enum.Font.Creepster
+AutoSell.Text = "AUTO SELL"
+AutoSell.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoSell.TextScaled = true
+AutoSell.TextSize = 14.000
+AutoSell.TextWrapped = true
+AutoSell.MouseButton1Down:connect(function()
+while true do
+	wait("0")
+
+game:GetService("ReplicatedStorage").Events.Sell:FireServer()
+end
+end)
+
+BuyAllBrains.Name = "BuyAllBrains"
+BuyAllBrains.Parent = Scripts
+BuyAllBrains.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+BuyAllBrains.BorderColor3 = Color3.fromRGB(85, 255, 0)
+BuyAllBrains.BorderSizePixel = 0
+BuyAllBrains.Position = UDim2.new(0.690805793, 0, 0.0479664207, 0)
+BuyAllBrains.Size = UDim2.new(0, 156, 0, 49)
+BuyAllBrains.ZIndex = 2
+BuyAllBrains.Font = Enum.Font.Creepster
+BuyAllBrains.Text = "BUY ALL BRAINS"
+BuyAllBrains.TextColor3 = Color3.fromRGB(0, 0, 0)
+BuyAllBrains.TextScaled = true
+BuyAllBrains.TextSize = 14.000
+BuyAllBrains.TextWrapped = true
+BuyAllBrains.MouseButton1Down:connect(function()
+game:GetService("ReplicatedStorage").Events.BuyAllBrain:FireServer()
+end)
+
+BuyBasicEgg.Name = "BuyBasicEgg"
+BuyBasicEgg.Parent = Scripts
+BuyBasicEgg.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+BuyBasicEgg.BorderColor3 = Color3.fromRGB(85, 255, 0)
+BuyBasicEgg.BorderSizePixel = 0
+BuyBasicEgg.Position = UDim2.new(0.0150378942, 0, 0.368388951, 0)
+BuyBasicEgg.Size = UDim2.new(0, 156, 0, 49)
+BuyBasicEgg.ZIndex = 2
+BuyBasicEgg.Font = Enum.Font.Creepster
+BuyBasicEgg.Text = "BUY BASIC EGG"
+BuyBasicEgg.TextColor3 = Color3.fromRGB(0, 0, 0)
+BuyBasicEgg.TextScaled = true
+BuyBasicEgg.TextSize = 14.000
+BuyBasicEgg.TextWrapped = true
+BuyBasicEgg.MouseButton1Down:connect(function()
+local args = {
+    [1] = "Basic Egg",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.HatchPet:FireServer(unpack(args))
+end)
+
+BuyCrackedEgg.Name = "BuyCrackedEgg"
+BuyCrackedEgg.Parent = Scripts
+BuyCrackedEgg.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+BuyCrackedEgg.BorderColor3 = Color3.fromRGB(85, 255, 0)
+BuyCrackedEgg.BorderSizePixel = 0
+BuyCrackedEgg.Position = UDim2.new(0.354628325, 0, 0.368388951, 0)
+BuyCrackedEgg.Size = UDim2.new(0, 156, 0, 49)
+BuyCrackedEgg.ZIndex = 2
+BuyCrackedEgg.Font = Enum.Font.Creepster
+BuyCrackedEgg.Text = "BUY CRACKED EGG"
+BuyCrackedEgg.TextColor3 = Color3.fromRGB(0, 0, 0)
+BuyCrackedEgg.TextScaled = true
+BuyCrackedEgg.TextSize = 14.000
+BuyCrackedEgg.TextWrapped = true
+BuyCrackedEgg.MouseButton1Down:connect(function()
+local args = {
+    [1] = "Cracked Egg",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.HatchPet:FireServer(unpack(args))
+end)
+
+BuyNatureEgg.Name = "BuyNatureEgg"
+BuyNatureEgg.Parent = Scripts
+BuyNatureEgg.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+BuyNatureEgg.BorderColor3 = Color3.fromRGB(85, 255, 0)
+BuyNatureEgg.BorderSizePixel = 0
+BuyNatureEgg.Position = UDim2.new(0.690805793, 0, 0.368388951, 0)
+BuyNatureEgg.Size = UDim2.new(0, 156, 0, 49)
+BuyNatureEgg.ZIndex = 2
+BuyNatureEgg.Font = Enum.Font.Creepster
+BuyNatureEgg.Text = "BUY NATURE EGG"
+BuyNatureEgg.TextColor3 = Color3.fromRGB(0, 0, 0)
+BuyNatureEgg.TextScaled = true
+BuyNatureEgg.TextSize = 14.000
+BuyNatureEgg.TextWrapped = true
+BuyNatureEgg.MouseButton1Down:connect(function()
+local args = {
+    [1] = "Nature Egg",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.HatchPet:FireServer(unpack(args))
+end)
+
+ClaimDailyChest.Name = "ClaimDailyChest"
+ClaimDailyChest.Parent = Scripts
+ClaimDailyChest.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+ClaimDailyChest.BorderColor3 = Color3.fromRGB(85, 255, 0)
+ClaimDailyChest.BorderSizePixel = 0
+ClaimDailyChest.Position = UDim2.new(0.15838258, 0, 0.681769192, 0)
+ClaimDailyChest.Size = UDim2.new(0, 156, 0, 49)
+ClaimDailyChest.ZIndex = 2
+ClaimDailyChest.Font = Enum.Font.Creepster
+ClaimDailyChest.Text = "CLAIM DAILY CHEST"
+ClaimDailyChest.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClaimDailyChest.TextScaled = true
+ClaimDailyChest.TextSize = 14.000
+ClaimDailyChest.TextWrapped = true
+ClaimDailyChest.MouseButton1Down:connect(function()
+local args = {
+    [1] = "Daily1"
+}
+
+game:GetService("ReplicatedStorage").Events.ClaimChest:InvokeServer(unpack(args))
+end)
+
+ClaimGroupChest.Name = "ClaimGroupChest"
+ClaimGroupChest.Parent = Scripts
+ClaimGroupChest.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+ClaimGroupChest.BorderColor3 = Color3.fromRGB(85, 255, 0)
+ClaimGroupChest.BorderSizePixel = 0
+ClaimGroupChest.Position = UDim2.new(0.497973025, 0, 0.681769192, 0)
+ClaimGroupChest.Size = UDim2.new(0, 156, 0, 49)
+ClaimGroupChest.ZIndex = 2
+ClaimGroupChest.Font = Enum.Font.Creepster
+ClaimGroupChest.Text = "CLAIM GROUP CHEST"
+ClaimGroupChest.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClaimGroupChest.TextScaled = true
+ClaimGroupChest.TextSize = 14.000
+ClaimGroupChest.TextWrapped = true
+ClaimGroupChest.MouseButton1Down:connect(function()
+local args = {
+    [1] = "Group"
+}
+
+game:GetService("ReplicatedStorage").Events.ClaimChest:InvokeServer(unpack(args))
+end)
+
+MainTitle.Name = "MainTitle"
+MainTitle.Parent = Main
+MainTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainTitle.BackgroundTransparency = 1.000
+MainTitle.Position = UDim2.new(0.401612908, 0, 0, 0)
+MainTitle.Size = UDim2.new(0, 184, 0, 27)
+MainTitle.Font = Enum.Font.Creepster
+MainTitle.Text = "Zombie simulator"
+MainTitle.TextColor3 = Color3.fromRGB(255, 11, 47)
+MainTitle.TextScaled = true
+MainTitle.TextSize = 14.000
+MainTitle.TextWrapped = true
+
+MainInfo.Name = "MainInfo"
+MainInfo.Parent = Main
+MainInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainInfo.BackgroundTransparency = 1.000
+MainInfo.Position = UDim2.new(0.385483861, 0, 0.0764872506, 0)
+MainInfo.Size = UDim2.new(0, 200, 0, 28)
+MainInfo.Font = Enum.Font.Creepster
+MainInfo.Text = "Made by MasterDoggho"
+MainInfo.TextColor3 = Color3.fromRGB(255, 16, 20)
+MainInfo.TextScaled = true
+MainInfo.TextSize = 14.000
+MainInfo.TextWrapped = true
+
+Exit.Name = "Exit"
+Exit.Parent = Main
+Exit.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+Exit.BorderColor3 = Color3.fromRGB(85, 255, 0)
+Exit.BorderSizePixel = 0
+Exit.Position = UDim2.new(0.932823956, 0, 0.0222911686, 0)
+Exit.Size = UDim2.new(0, 35, 0, 31)
+Exit.ZIndex = 2
+Exit.Font = Enum.Font.Creepster
+Exit.Text = "X"
+Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Exit.TextScaled = true
+Exit.TextSize = 14.000
+Exit.TextWrapped = true
+Exit.MouseButton1Down:connect(function()
+	game.CoreGui.ZombieSimulator:Destroy()
+end)
